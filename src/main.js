@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 const firebaseConfig = {
   apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
