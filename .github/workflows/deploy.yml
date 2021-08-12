@@ -8,7 +8,7 @@ on:
       - v*
 
 jobs:
-  build_and_live:
+  build_and_deploy:
     environment:
       name: Production
       url: https://egs.jessehendriks.nl
@@ -17,14 +17,14 @@ jobs:
       - uses: actions/checkout@v2
       - run: echo 'Set environment variables' ${{ env.VUE_APP_FIREBASE_API_KEY }}
       - run: |
-          {
-            echo VUE_APP_FIREBASE_API_KEY=${{ env.VUE_APP_FIREBASE_API_KEY }}
-            echo VUE_APP_FIREBASE_AUTH_DOMAIN=${{ env.VUE_APP_FIREBASE_AUTH_DOMAIN }}
-            echo VUE_APP_FIREBASE_PROJECT_ID=${{ env.VUE_APP_FIREBASE_PROJECT_ID }}
-            echo VUE_APP_FIREBASE_STORAGE_BUCKET=${{ env.VUE_APP_FIREBASE_STORAGE_BUCKET }}
-            echo VUE_APP_FIREBASE_MESSAGING_SENDER_ID=${{ env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID }}
-            echo VUE_APP_FIREBASE_APP_ID=${{ env.VUE_APP_FIREBASE_APP_ID }}
-          } | tee -a .env.local
+          touch .env
+          echo VUE_APP_FIREBASE_API_KEY=${{ env.VUE_APP_FIREBASE_API_KEY }} >> .env
+          echo VUE_APP_FIREBASE_AUTH_DOMAIN=${{ env.VUE_APP_FIREBASE_AUTH_DOMAIN }} >> .env
+          echo VUE_APP_FIREBASE_PROJECT_ID=${{ env.VUE_APP_FIREBASE_PROJECT_ID }} >> .env
+          echo VUE_APP_FIREBASE_STORAGE_BUCKET=${{ env.VUE_APP_FIREBASE_STORAGE_BUCKET }} >> .env
+          echo VUE_APP_FIREBASE_MESSAGING_SENDER_ID=${{ env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID }} >> .env
+          echo VUE_APP_FIREBASE_APP_ID=${{ env.VUE_APP_FIREBASE_APP_ID }} >> .env
+          cat .env
       - run: npm install && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
