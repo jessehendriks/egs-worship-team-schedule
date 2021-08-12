@@ -14,6 +14,7 @@
 import { ref, onMounted } from 'vue';
 import OverviewTable from './OverviewTable';
 import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 export default {
   components: { OverviewTable },
