@@ -6,8 +6,8 @@
       <th class="show-xs">Team</th>
       <th class="show-md">Zangleider</th>
       <th class="show-md">Spreker</th>
-      <th class="show-md">Oudste</th>
-      <th class="show-md">Opmerking</th>
+      <th class="show-lg">Oudste</th>
+      <th class="show-lg">Opmerking</th>
     </tr>
     </thead>
     <tbody>

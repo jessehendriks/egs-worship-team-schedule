@@ -4,8 +4,8 @@
     <td class="show-xs">{{ item.team }}</td>
     <td class="show-md">{{ item.worship_leader }}</td>
     <td class="show-md">{{ item.preacher }}</td>
-    <td class="show-md">{{ item.eldest }}</td>
-    <td class="show-md">{{ item.remark }}</td>
+    <td class="show-lg">{{ item.eldest }}</td>
+    <td class="show-lg">{{ item.remark }}</td>
   </tr>
   <tr v-if="opened" class="collapse-row">
     <td colspan="100%">
