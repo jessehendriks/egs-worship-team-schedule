@@ -7,7 +7,8 @@ I did this project for 2 reasons.
 
 ## Build with
 * [Vue.js](https://vuejs.org/) - Javascript Framework
-* [Firebase](https://firebase.google.com/) - Firestore Database
+* [Firebase](https://firebase.google.com/) - Firestore Database & Hosting
+* [Github Actions](https://github.com/) - Deployed with Github Actions
 
 ## Project setup
 ```

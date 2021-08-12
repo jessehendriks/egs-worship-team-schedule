@@ -6,8 +6,12 @@ on:
   create:
     tags:
       - v*
+
 jobs:
   build_and_live:
+    environment:
+      name: Production
+      url: https://egs.jessehendriks.nl
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
