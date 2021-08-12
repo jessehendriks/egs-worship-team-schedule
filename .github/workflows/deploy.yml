@@ -18,12 +18,12 @@ jobs:
       - run: echo 'Set environment variables' ${{ env.VUE_APP_FIREBASE_API_KEY }}
       - run: |
           touch .env
-          echo VUE_APP_FIREBASE_API_KEY=${{ env.VUE_APP_FIREBASE_API_KEY }} >> .env
-          echo VUE_APP_FIREBASE_AUTH_DOMAIN=${{ env.VUE_APP_FIREBASE_AUTH_DOMAIN }} >> .env
-          echo VUE_APP_FIREBASE_PROJECT_ID=${{ env.VUE_APP_FIREBASE_PROJECT_ID }} >> .env
-          echo VUE_APP_FIREBASE_STORAGE_BUCKET=${{ env.VUE_APP_FIREBASE_STORAGE_BUCKET }} >> .env
-          echo VUE_APP_FIREBASE_MESSAGING_SENDER_ID=${{ env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID }} >> .env
-          echo VUE_APP_FIREBASE_APP_ID=${{ env.VUE_APP_FIREBASE_APP_ID }} >> .env
+          echo VUE_APP_FIREBASE_API_KEY=${{ secret.VUE_APP_FIREBASE_API_KEY }} >> .env
+          echo VUE_APP_FIREBASE_AUTH_DOMAIN=${{ secret.VUE_APP_FIREBASE_AUTH_DOMAIN }} >> .env
+          echo VUE_APP_FIREBASE_PROJECT_ID=${{ secret.VUE_APP_FIREBASE_PROJECT_ID }} >> .env
+          echo VUE_APP_FIREBASE_STORAGE_BUCKET=${{ secret.VUE_APP_FIREBASE_STORAGE_BUCKET }} >> .env
+          echo VUE_APP_FIREBASE_MESSAGING_SENDER_ID=${{ secret.VUE_APP_FIREBASE_MESSAGING_SENDER_ID }} >> .env
+          echo VUE_APP_FIREBASE_APP_ID=${{ secret.VUE_APP_FIREBASE_APP_ID }} >> .env
           cat .env
       - run: npm install && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
