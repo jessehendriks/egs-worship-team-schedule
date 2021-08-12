@@ -1,5 +1,8 @@
 # egs-music-schedule
 
+## Credits
+- Table styling: https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
+
 ## Project setup
 ```
 yarn install
