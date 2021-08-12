@@ -11,9 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Set environment variables
+      - run: |
+          {
+            echo VUE_APP_FIREBASE_API_KEY=${{ env.VUE_APP_FIREBASE_API_KEY }}
+            echo VUE_APP_FIREBASE_AUTH_DOMAIN=${{ env.VUE_APP_FIREBASE_AUTH_DOMAIN }}
+            echo VUE_APP_FIREBASE_PROJECT_ID=${{ env.VUE_APP_FIREBASE_PROJECT_ID }}
+            echo VUE_APP_FIREBASE_STORAGE_BUCKET=${{ env.VUE_APP_FIREBASE_STORAGE_BUCKET }}
+            echo VUE_APP_FIREBASE_MESSAGING_SENDER_ID=${{ env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID }}
+            echo VUE_APP_FIREBASE_APP_ID=${{ env.VUE_APP_FIREBASE_APP_ID }}
+          } | tee -a .env.local
       - run: npm install && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_EGS_WORSHIP_TEAM_SCHEDULE }}'
           projectId: egs-worship-team-schedule
+          channelId: egs-worship-team-schedule
