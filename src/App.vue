@@ -1,18 +1,18 @@
 <template>
   <toggle-theme-mode/>
-  <router-view/>
-  <Footer/>
+  <overview/>
+  <custom-footer/>
 </template>
 
 <script>
-import Footer from './components/Footer';
+import CustomFooter from './components/CustomFooter';
 import ToggleThemeMode from './components/toggleThemeMode';
+import Overview from './views/Overview';
 
 export default {
   name: 'App',
-  components: { ToggleThemeMode, Footer },
+  components: { Overview, ToggleThemeMode, CustomFooter },
 }
-
 </script>
 
 <style>
