@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import CustomFooter from './components/CustomFooter';
-import ToggleThemeMode from './components/toggleThemeMode';
 import Overview from './views/Overview';
+import ToggleThemeMode from './components/toggleThemeMode';
+import CustomFooter from './components/CustomFooter';
 
 export default {
   name: 'App',
-  components: { Overview, ToggleThemeMode, CustomFooter },
+  components: { CustomFooter, ToggleThemeMode, Overview },
 }
 </script>
 
