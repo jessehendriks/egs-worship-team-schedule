@@ -48,7 +48,9 @@ export default {
     let data = ref([]);
     const firebaseData = async () => {
       try {
-        const snapshot = await firebase.firestore().collection('schedule').get();
+        const snapshot = await firebase.firestore().collection('schedule')
+        .where('date', '>', new Date())
+        .orderBy('date').get();
         data.value = snapshot.docs.map(doc => doc.data());
       } catch (error) {
         console.error(error);

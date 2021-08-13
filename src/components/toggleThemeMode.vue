@@ -1,7 +1,7 @@
 <template>
   <div id="toggleThemeMode">
-    <input type="checkbox" class="checkbox" id="checkbox" v-model="isDarkTheme">
     <label for="checkbox" class="checkbox-label">
+    <input type="checkbox" class="checkbox" id="checkbox" v-model="isDarkTheme">
       <font-awesome-icon icon="moon"/>
       <font-awesome-icon icon="sun"/>
       <span class="ball"></span>

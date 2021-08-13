@@ -41,14 +41,14 @@ export default {
     }
   },
   setup(props) {
-    eventBus.$on('blaat', () => {
+    eventBus.$on('toggle-row', () => {
       opened.value = false;
     });
 
     const opened = ref(false);
     const toggleRow = () => {
       if (!opened.value) {
-        eventBus.$emit('blaat');
+        eventBus.$emit('toggle-row');
       }
 
       opened.value = !opened.value;

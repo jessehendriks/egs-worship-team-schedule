@@ -2,7 +2,7 @@
 > Simple overview for the EGS Worship Team Schedule 2021 / 2022
 
 I did this project for 2 reasons.
-1. I wanted to learn something new (Vue Composition API, Firebase integration, create my own css instead of using a Framework).
+1. I wanted to learn something new
 2. I was annoyed to lookup the excel sheet and see when I was scheduled next. I wanted easy access.
 
 ## Build with
