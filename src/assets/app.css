@@ -9,10 +9,12 @@ html, body {
 }
 
 body {
-  border-top: 0.4rem solid #e35d5b;
+  border-top: 7px solid #e35d5b;
   background: #ECE9E6; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative;
+  min-height: 100vh;
 }
 
 h1 {
@@ -58,6 +60,16 @@ table tbody tr {
   text-align: left;
 }
 
+table tbody tr.no-data {
+  text-align: center;
+  font-style: italic;
+}
+
+table tbody tr.no-data .emoji{
+  text-align: center;
+  font-style: normal;
+}
+
 table tbody tr:last-of-type {
   border-bottom: 4px solid #e35d5b;
 }
@@ -73,11 +85,9 @@ table tbody tr.collapse-row {
 
 footer {
   text-align: center;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  border-bottom: 0.4rem solid #e35d5b;
+  border-bottom: 7px solid #e35d5b;
   height: 40px;
+  margin-top: auto;
 }
 
 footer span {
@@ -89,6 +99,7 @@ footer span {
 @media only screen and (max-width: 600px) {
   table {
     min-width: 90vw;
+    max-width: 90vw;
   }
 
   .wrapper {
@@ -113,6 +124,7 @@ footer span {
 @media only screen and (min-width: 600px) and (max-width: 1200px) {
   table {
     min-width: 90vw;
+    max-width: 90vw;
   }
 
   .show-lg {
@@ -122,11 +134,5 @@ footer span {
   .wrapper {
     margin: 0 auto;
     padding: 10px 10px 10px 10px;
-  }
-}
-
-@media only screen and (max-width: 768px) and (max-width: 1200px) {
-  table {
-    min-width: 90vw;
   }
 }
