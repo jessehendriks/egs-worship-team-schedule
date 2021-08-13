@@ -12,7 +12,7 @@
 
 <script>
 import { ref, onMounted } from 'vue';
-import OverviewTable from './OverviewTable';
+import OverviewTable from '../components/OverviewTable';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 

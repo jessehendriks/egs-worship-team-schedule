@@ -1,18 +1,18 @@
 <template>
   <div class="wrapper">
-    <overview/>
+    <router-view/>
   </div>
   <Footer/>
 </template>
 
 <script>
-import Overview from './components/Overview';
 import Footer from './components/Footer';
 
 export default {
   name: 'App',
-  components: { Overview, Footer },
+  components: { Footer },
 }
+
 </script>
 
 <style>
