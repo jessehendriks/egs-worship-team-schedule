@@ -5,7 +5,6 @@ import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import './registerServiceWorker';
 import './assets/app.css';
-import './util/firebase';
 
 library.add(faMoon, faSun);
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app');
