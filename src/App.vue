@@ -1,16 +1,16 @@
 <template>
-  <div class="wrapper">
-    <router-view/>
-  </div>
+  <toggle-theme-mode/>
+  <router-view/>
   <Footer/>
 </template>
 
 <script>
 import Footer from './components/Footer';
+import ToggleThemeMode from './components/toggleThemeMode';
 
 export default {
   name: 'App',
-  components: { Footer },
+  components: { ToggleThemeMode, Footer },
 }
 
 </script>

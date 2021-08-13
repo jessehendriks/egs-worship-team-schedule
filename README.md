@@ -35,3 +35,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Credits
 - Table styling: https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
+- Gradient background: https://uigradients.com/
+- Light/Dark Toggle Button: https://codepen.io/Umer_Farooq/pen/eYJgKGN
