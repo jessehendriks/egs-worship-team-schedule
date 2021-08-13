@@ -10,12 +10,17 @@
       <th class="show-lg">Opmerking</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody v-if="data && data.length > 0">
       <table-row
         v-for="item in data"
         :key="item.date"
         :item="item"
       />
+    </tbody>
+    <tbody v-else>
+    <tr class="no-data" >
+      <td colspan="100%"><span>Er is geen data beschikbaar</span> <span class="emoji">&#128546;</span></td>
+    </tr>
     </tbody>
   </table>
 </template>
