@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+$primary: #e35d5b;
+$dark: #3a3c3e;
+$white: #e7e7e7;
+$inner-dark: #333536;
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html, body {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.125rem;
+  color: $dark;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  border-top: 7px solid $primary;
+  background: #ECE9E6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  transition: background 0.2s linear;
+}
+
+button {
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 10px 0;
+
+  &.primary {
+    background-color: $primary;
+    color: $white;
+    width: 100%;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: $primary;
+}
+
+label {
+  margin: 10px 0;
+}
+
+input, textarea {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid #C2C2C2;
+  padding: 15px 12px 15px 20px;
+  font-size: 16px;
+
+  &:focus, &:focus-visible {
+    border: 2px solid $primary;
+  }
+}
+
+section#options {
+  width: 90vw;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  button {
+    background-color: $dark;
+    color: $white;
+    width: 50px;
+    height: 22px;
+    border: none;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-size: 13px;
+
+    &:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-right {
+  justify-content: right;
+  margin-left: auto;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  thead tr {
+    background-color: $primary;
+    color: #ffffff;
+    text-align: left;
+    position: sticky;
+    top: 0;
+  }
+
+  th, td {
+    padding: 12px 15px;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+
+    &.no-data {
+      text-align: center;
+      font-style: italic;
+
+      .emoji {
+        text-align: center;
+        font-style: normal;
+      }
+    }
+
+    &.active-row {
+      color: $primary;
+    }
+
+    &.collapse-row {
+      background-color: $white;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+    }
+
+    &:last-of-type {
+      border-bottom: 4px solid $primary;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  &__dialog {
+    position: relative;
+    width: 600px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+  }
+
+  &__close {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 20px 10px;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &__body {
+    padding: 10px 20px 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__footer {
+    padding: 10px 20px 20px;
+  }
+}
+
+footer {
+  text-align: center;
+  border-bottom: 7px solid $primary;
+  height: 50px;
+  margin-top: 25px;
+
+  span {
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: $dark;
+  width: 50px;
+  height: 22px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  font-size: 13px;
+  margin: 0;
+
+  .fa-moon {
+    color: #fac806;
+  }
+
+  .fa-sun {
+    color: #f39c12;
+  }
+
+  .ball {
+    background-color: #fff;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(27px);
+}
+
+/** XS: Phones **/
+@media only screen and (max-width: 600px) {
+  table {
+    min-width: 90vw;
+    max-width: 90vw;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    padding: 10px 10px 10px 10px;
+  }
+
+  .show-md {
+    display: none;
+  }
+
+  .show-lg {
+    display: none;
+  }
+
+  h1 {
+    margin: 5px 5px 10px 5px;
+  }
+
+  .modal {
+    .modal__dialog {
+      width: 100vw;
+      margin: 0 auto;
+      border-radius: 0;
+    }
+  }
+}
+
+/** MD: Phones **/
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+  table {
+    min-width: 90vw;
+    max-width: 90vw;
+  }
+
+  .show-lg {
+    display: none;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    padding: 10px 10px 10px 10px;
+  }
+}
+
+
+.dark-theme {
+  background: #232526; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, $dark, #333536); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $dark, #333536); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: $white;
+
+  input, textarea {
+    box-shadow: 0 0 20px rgba(231, 231, 231, 0.15);
+    background-color: $inner-dark;
+    color: $white;
+  }
+
+  section#options {
+    button {
+      background-color: $white;
+      color: $dark;
+    }
+  }
+
+  table {
+    box-shadow: 0 0 20px rgba(231, 231, 231, 0.15);
+
+    tbody tr.collapse-row {
+      background-color: $inner-dark;
+      box-shadow: inset 0 0 5px rgba(231, 231, 231, 0.15);
+    }
+  }
+
+  .checkbox-label {
+    background-color: $white;
+
+    .ball {
+      background-color: $dark;
+    }
+  }
+
+  .modal {
+    .modal__dialog {
+      background: $dark;
+    }
+  }
+}

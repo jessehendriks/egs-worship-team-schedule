@@ -37,3 +37,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Table styling: https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
 - Gradient background: https://uigradients.com/
 - Light/Dark Toggle Button: https://codepen.io/Umer_Farooq/pen/eYJgKGN
+- Modal component: https://medium.com/@katiemctigue/how-to-create-a-dark-mode-in-sass-609f131a3995

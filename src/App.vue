@@ -1,17 +1,17 @@
 <template>
-  <toggle-theme-mode/>
+  <options/>
   <overview/>
   <custom-footer/>
 </template>
 
 <script>
 import Overview from './views/Overview';
-import ToggleThemeMode from './components/toggleThemeMode';
 import CustomFooter from './components/CustomFooter';
+import Options from './components/Options';
 
 export default {
   name: 'App',
-  components: { CustomFooter, ToggleThemeMode, Overview },
+  components: { Options, CustomFooter, Overview },
 }
 </script>
 
